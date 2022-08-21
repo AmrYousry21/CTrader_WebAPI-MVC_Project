@@ -1,0 +1,18 @@
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Web API Demo.exe
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Web API Demo.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Web API Demo.deps.json
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Web API Demo.runtimeconfig.json
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Web API Demo.pdb
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\amryo\Repos\Web API Demo\Web API Demo\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

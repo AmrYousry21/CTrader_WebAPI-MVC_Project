@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTraderWebAPI", "Web API Demo\CTraderWebAPI.csproj", "{AF1305B4-1415-4B6C-A2CD-D71A6D99F2DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTraderMVC", "CTraderMVC\CTraderMVC.csproj", "{369873D6-0269-4D61-A729-4E8FD0DFE389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AF1305B4-1415-4B6C-A2CD-D71A6D99F2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF1305B4-1415-4B6C-A2CD-D71A6D99F2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF1305B4-1415-4B6C-A2CD-D71A6D99F2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369873D6-0269-4D61-A729-4E8FD0DFE389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369873D6-0269-4D61-A729-4E8FD0DFE389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369873D6-0269-4D61-A729-4E8FD0DFE389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369873D6-0269-4D61-A729-4E8FD0DFE389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

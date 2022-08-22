@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amryo\\Repos\\Web API Demo\\Web API Demo\\CTraderWebAPI.csproj": {}
+    "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amryo\\Repos\\Web API Demo\\Web API Demo\\CTraderWebAPI.csproj": {
+    "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amryo\\Repos\\Web API Demo\\Web API Demo\\CTraderWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj",
         "projectName": "CTraderWebAPI",
-        "projectPath": "C:\\Users\\amryo\\Repos\\Web API Demo\\Web API Demo\\CTraderWebAPI.csproj",
+        "projectPath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj",
         "packagesPath": "C:\\Users\\amryo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amryo\\Repos\\Web API Demo\\Web API Demo\\obj\\",
+        "outputPath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amryo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,6 +51,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             }
           },
           "imports": [

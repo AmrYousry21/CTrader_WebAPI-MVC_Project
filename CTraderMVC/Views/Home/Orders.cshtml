@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Orders";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model IEnumerable<CTraderMVC.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+<div><b>List of Orders</b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th> Order Id </th>
+        <th>Zone ID </th>
+        <th>Zone Type </th>
+        <th> Symbol </th>
+        <th>Emtry Price </th>
+        <th>Entry Time </th>
+        <th> Stop Loss </th>
+        <th>Take Profit </th>
+        <th>Pips </th>
+
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.orderId</td>
+            <td>@d.zoneId</td>
+            <td>@d.zoneType</td>
+            <td>@d.symbol</td>
+            <td>@d.entryPrice</td>
+            <td>@d.entryTime</td>
+            <td>@d.stopLoss</td>
+            <td>@d.takeProfit</td>
+            <td>@d.pips</td>
+
+        </tr>
+    }
+</table>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using Newtonsoft.Json;
+using Web_API_Demo.Models;
 
 namespace CTraderWebAPI.Controllers
 {
@@ -11,39 +12,50 @@ namespace CTraderWebAPI.Controllers
 
     public class ZonesController : ControllerBase
     {
-       
+
         string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
 
         [HttpGet]
-        public string GetALLZones() 
+        public IActionResult GetALLZones()
         {
-            
-           using (SqlConnection conn = new SqlConnection(connectionString)) 
+            List<ZonesViewModel> zones = new List<ZonesViewModel>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                SqlCommand command = new SqlCommand("SELECT * FROM Indecision_Candles", conn);
                 conn.Open();
 
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM indecision_candles" , connectionString);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                SqlDataReader reader = command.ExecuteReader();
 
-                if (dt.Rows.Count > 0)
+                // Check if the DataReader has any row.
+                if (reader.HasRows)
                 {
-                    return JsonConvert.SerializeObject(dt);
-                    conn.Close();
-                }
+                    // Obtain a row from the query result.
+                    while (reader.Read())
+                    {
+                        var zone = new ZonesViewModel
+                        {
+                            TimeS = reader.GetDateTime(0),
+                            Zonetype = reader.GetString(1),
+                            ZoneStatus = reader.GetBoolean(2)
+                        };
 
+                        zones.Add(zone);
+                    }
+                }
                 else
                 {
-                    return "No data found";
-                    conn.Close();
+                    Console.WriteLine("No rows found.");
                 }
-                
+                // Always call the Close method when you have finished using the DataReader object.
+                reader.Close();
+
             }
 
+            return Ok(zones);
         }
 
         [HttpGet("{id}")]
-        public string  GetZoneStatus(int id)
+        public string GetZoneStatus(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -83,13 +95,13 @@ namespace CTraderWebAPI.Controllers
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                
+
             }
         }
 
         [HttpDelete("{id}")]
 
-        public string  Delete(int id)
+        public string Delete(int id)
         {
             return "";
         }

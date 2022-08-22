@@ -1,6 +1,5 @@
 using System.Data.SqlClient;
 using System.Data;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 

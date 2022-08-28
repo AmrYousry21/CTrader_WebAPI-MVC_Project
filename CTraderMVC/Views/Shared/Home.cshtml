@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+@model CTraderMVC.Models.UserInput
+@{
+
+}
+
+<div class="container border" style="padding:20px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for = "UserNameInput"></label>
+            </div>
+            <div class="col-5">
+               <input type="text" asp-for="UserNameInput" class="form-control"/>
+            </div>
+            <span class="text-danger" asp-validation-for="UserNameInput"></span>
+        </div><br />
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="UserPasswordInput"></label>
+            </div>
+            <div class="col-5">
+               <input type="password" asp-for="UserPasswordInput" class="form-control"/>
+            </div>
+            <span class="text-danger" asp-validation-for="UserPasswordInput"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <input type ="submit" class="btn btn-primary" value="Login" />
+            </div>
+            <div class="col-5">
+
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+

@@ -13,9 +13,9 @@ namespace CTraderMVC.Controllers
     {
         private readonly ILogger<ZonesOrders> _logger;
         private readonly RestClient _client;
-        
-        
-        
+
+        UserState user = UserState.GetUserState();
+
         public ZonesOrders(ILogger<ZonesOrders> logger)
         {
             _logger = logger;
@@ -26,7 +26,7 @@ namespace CTraderMVC.Controllers
         {
             List<ZonesViewModel> zones = new List<ZonesViewModel>();
 
-            var user = UserState.GetUserState();
+           
             if (user is not null && user.isLoggedIn)
             {
                 var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
@@ -40,7 +40,7 @@ namespace CTraderMVC.Controllers
         public IActionResult Orders()
         {
             List<Order> orders = new List<Order>();
-            var user = UserState.GetUserState();
+            
             
             if (user is not null && user.isLoggedIn) 
             {

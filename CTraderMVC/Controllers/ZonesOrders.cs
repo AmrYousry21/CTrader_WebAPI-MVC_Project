@@ -5,7 +5,6 @@ using System;
 using System.Diagnostics;
 using RestSharp;
 using CTraderMVC.Models;
-using static CTraderMVC.Controllers.User;
 
 namespace CTraderMVC.Controllers
 {
@@ -25,20 +24,32 @@ namespace CTraderMVC.Controllers
 
         public IActionResult Zones()
         {
-            var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
-            var result = _client.Execute(request);
-            List<ZonesViewModel> zones = JsonConvert.DeserializeObject<List<ZonesViewModel>>(result.Content);
+            List<ZonesViewModel> zones = new List<ZonesViewModel>();
 
-            return View(zones);
+            var user = UserState.GetUserState();
+            if (user is not null && user.isLoggedIn)
+            {
+                var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
+                var result = _client.Execute(request);
+                 zones = JsonConvert.DeserializeObject<List<ZonesViewModel>>(result.Content);
+            }
+
+            return View(zones.Any() ? zones : null);
         }
 
         public IActionResult Orders()
         {
-            var request = new RestRequest("https://localhost:7064/api/Order", Method.Get);
-            var result = _client.Execute(request);
-            List<Order> orders = JsonConvert.DeserializeObject<List<Order>>(result.Content);
+            List<Order> orders = new List<Order>();
+            var user = UserState.GetUserState();
+            
+            if (user is not null && user.isLoggedIn) 
+            {
+                var request = new RestRequest("https://localhost:7064/api/Order", Method.Get);
+                var result = _client.Execute(request);
+                orders = JsonConvert.DeserializeObject<List<Order>>(result.Content);
+            }
 
-            return View(orders);
+            return View(orders.Any() ? orders :null);
         }
 
 

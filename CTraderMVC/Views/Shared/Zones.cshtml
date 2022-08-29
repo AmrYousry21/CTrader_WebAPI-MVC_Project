@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Zones";
 }
 
@@ -14,23 +13,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div><b>List of Zones</b><br /></div>
-<table class="table table-bordered table-responsive table-hover">
-    <tr>
-        <th> Time Stamp </th>
-        <th>Zone Type </th>
-        <th>Zone Status </th>
-
-    </tr>
-    @foreach (var d in Model)
-    {
+@if (Model is not null)
+{
+    <div><b>List of Zones</b><br /></div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th> Time Stamp </th>
+            <th>Zone Type </th>
+            <th>Zone Status </th>
+        </tr>
+        @foreach (var d in Model)
+        {
         <tr>
             <td>@d.TimeS</td>
             <td>@d.ZoneType</td>
             <td>@d.ZoneStatus</td>
 
         </tr>
-    }
-</table>
+        }
+    </table>
+}
+
+
+@if (Model is null)
+{
+    <h1>User Not Logged in</h1>
+}
 
 

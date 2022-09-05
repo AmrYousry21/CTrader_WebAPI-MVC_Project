@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Newtonsoft.Json;
 using Web_API_Demo.Models;
+using System.Collections.Generic;
 
 namespace CTraderWebAPI.Controllers
 {
@@ -34,9 +35,10 @@ namespace CTraderWebAPI.Controllers
                     {
                         var zone = new ZonesViewModel
                         {
-                            TimeS = reader.GetDateTime(0),
-                            Zonetype = reader.GetString(1),
-                            ZoneStatus = reader.GetBoolean(2)
+                            ID = reader.GetInt32(0),
+                            TimeS = reader.GetDateTime(1),
+                            Zonetype = reader.GetString(2),
+                            ZoneStatus = reader.GetBoolean(3)
                         };
 
                         zones.Add(zone);
@@ -101,9 +103,28 @@ namespace CTraderWebAPI.Controllers
 
         [HttpDelete("{id}")]
 
-        public string Delete(int id)
+        public void Delete(int id)
         {
-            return "";
+            
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+
+               string commandText = "DELETE FROM indecision_candles WHERE ID = @id";
+
+                SqlCommand command = new SqlCommand(commandText, conn);
+                command.Parameters.Add("@id", SqlDbType.Int);
+                command.Parameters["@id"].Value = id;
+
+                conn.Open();
+
+                command.ExecuteNonQuery();
+
+                conn.Close();
+
+
+
+            }
         }
 
     }

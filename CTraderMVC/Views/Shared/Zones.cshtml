@@ -18,6 +18,7 @@
     <div><b>List of Zones</b><br /></div>
     <table class="table table-bordered table-responsive table-hover">
         <tr>
+            <th>ID</th>
             <th> Time Stamp </th>
             <th>Zone Type </th>
             <th>Zone Status </th>
@@ -25,6 +26,7 @@
         @foreach (var d in Model)
         {
         <tr>
+            <td>@d.ID</td>
             <td>@d.TimeS</td>
             <td>@d.ZoneType</td>
             <td>@d.ZoneStatus</td>

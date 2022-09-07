@@ -22,6 +22,7 @@
             <th> Time Stamp </th>
             <th>Zone Type </th>
             <th>Zone Status </th>
+            <th>Actions</th>
         </tr>
         @foreach (var d in Model)
         {
@@ -30,10 +31,13 @@
             <td>@d.TimeS</td>
             <td>@d.ZoneType</td>
             <td>@d.ZoneStatus</td>
+            <td><a class="nav-link text-white" style="background-color:red" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a></td>
+                
 
         </tr>
         }
     </table>
+    
 }
 
 

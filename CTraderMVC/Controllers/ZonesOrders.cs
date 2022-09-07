@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics;
 using RestSharp;
 using CTraderMVC.Models;
+using System.ComponentModel;
 
 namespace CTraderMVC.Controllers
 {
@@ -31,7 +32,7 @@ namespace CTraderMVC.Controllers
             {
                 var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
                 var result = _client.Execute(request);
-                 zones = JsonConvert.DeserializeObject<List<ZonesViewModel>>(result.Content);
+                zones = JsonConvert.DeserializeObject<List<ZonesViewModel>>(result.Content);
             }
 
             return View(zones.Any() ? zones : null);
@@ -57,6 +58,14 @@ namespace CTraderMVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public ActionResult Delete(int id) 
+        {
+            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Delete);
+            var result = _client.Execute(request);
+
+            return RedirectToAction("Zones", Zones);
         }
     }
 }

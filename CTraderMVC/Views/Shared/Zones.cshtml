@@ -6,7 +6,7 @@
     <h1 class="display-4">CTrader API</h1>
 </div>
 
-@model IEnumerable<CTraderMVC.Models.ZonesViewModel>
+@model IEnumerable<CTraderMVC.Models.Zones>
 
 @{
     ViewBag.Title = "Index";
@@ -31,13 +31,13 @@
             <td>@d.TimeS</td>
             <td>@d.ZoneType</td>
             <td>@d.ZoneStatus</td>
-            <td><a class="nav-link text-white" style="background-color:red" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a></td>
-                
-
+            <td>
+                <a class="nav-link text-white" id="Action-button" style="background-color:red" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a>
+                    <a class="nav-link text-white" id="Action-button" style="background-color:green" asp-area="" asp-controller="ZonesOrders" asp-action="Update" asp-route-id="@d.ID">Edit</a>
+            </td>
         </tr>
         }
     </table>
-    
 }
 
 

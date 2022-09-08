@@ -6,6 +6,8 @@ using System.Diagnostics;
 using RestSharp;
 using CTraderMVC.Models;
 using System.ComponentModel;
+using System.Drawing;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 
 namespace CTraderMVC.Controllers
 {
@@ -25,14 +27,14 @@ namespace CTraderMVC.Controllers
 
         public IActionResult Zones()
         {
-            List<ZonesViewModel> zones = new List<ZonesViewModel>();
-
+            List<Zones> zones = new List<Zones>();
+            
            
             if (user is not null && user.isLoggedIn)
             {
                 var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
                 var result = _client.Execute(request);
-                zones = JsonConvert.DeserializeObject<List<ZonesViewModel>>(result.Content);
+                zones = JsonConvert.DeserializeObject<List<Zones>>(result.Content);
             }
 
             return View(zones.Any() ? zones : null);
@@ -66,6 +68,41 @@ namespace CTraderMVC.Controllers
             var result = _client.Execute(request);
 
             return RedirectToAction("Zones", Zones);
+        }
+
+        public ActionResult ViewZone(int ID)
+        {
+            Zones zone = new Zones();
+            var request = new RestRequest("https://localhost:7064/api/Zones/" + ID, Method.Get);
+            var result = _client.Execute(request);
+            zone = JsonConvert.DeserializeObject<Zones>(result.Content);
+
+            return View(zone);
+        }
+        public ActionResult Update(int id)
+        {
+            Zones zone = new Zones();
+
+            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Get);
+
+            var result = _client.Execute(request);
+
+            zone = JsonConvert.DeserializeObject<Zones>(result.Content);
+         
+            return View("Update", zone);
+        }
+
+        [HttpPost]
+        public ActionResult SaveZoneChanges(Zones model)
+        {
+            if (model is not null)
+            {
+                var request = new RestRequest("https://localhost:7064/api/Zones/" + model.ID, Method.Put).AddBody(model);
+
+                _client.Execute(request);
+            }
+
+            return RedirectToAction("Zones");
         }
     }
 }

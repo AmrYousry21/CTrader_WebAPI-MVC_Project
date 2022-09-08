@@ -19,7 +19,7 @@ namespace CTraderWebAPI.Controllers
         [HttpGet]
         public IActionResult GetALLZones()
         {
-            List<ZonesViewModel> zones = new List<ZonesViewModel>();
+            List<Zones> zones = new List<Zones>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM Indecision_Candles", conn);
@@ -33,7 +33,7 @@ namespace CTraderWebAPI.Controllers
                     // Obtain a row from the query result.
                     while (reader.Read())
                     {
-                        var zone = new ZonesViewModel
+                        var zone = new Zones
                         {
                             ID = reader.GetInt32(0),
                             TimeS = reader.GetDateTime(1),
@@ -56,31 +56,31 @@ namespace CTraderWebAPI.Controllers
             return Ok(zones);
         }
 
-        [HttpGet("{id}")]
-        public string GetZoneStatus(int id)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
+        //[HttpGet("{id}")]
+        //public string GetZoneStatus(int id)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
 
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM indecision_candles WHERE ZoneStatus = " + id, connectionString);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+        //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM indecision_candles WHERE ZoneStatus = " + id, connectionString);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
 
-                if (dt.Rows.Count > 0)
-                {
-                    return JsonConvert.SerializeObject(dt);
-                    conn.Close();
-                }
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            return JsonConvert.SerializeObject(dt);
+        //            conn.Close();
+        //        }
 
-                else
-                {
-                    return "No data found";
-                    conn.Close();
-                }
+        //        else
+        //        {
+        //            return "No data found";
+        //            conn.Close();
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         [HttpPut]
         public void AddNewZone()
@@ -110,7 +110,7 @@ namespace CTraderWebAPI.Controllers
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
-               string commandText = "DELETE FROM indecision_candles WHERE ID = @id";
+                string commandText = "DELETE FROM indecision_candles WHERE ID = @id";
 
                 SqlCommand command = new SqlCommand(commandText, conn);
                 command.Parameters.Add("@id", SqlDbType.Int);
@@ -125,6 +125,66 @@ namespace CTraderWebAPI.Controllers
 
 
             }
+        }
+
+        [HttpPut("{id}")]
+
+        public void Update(int id, [FromBody] Zones zone)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string commandText = $"UPDATE indecision_candles SET Zonetype = '{ zone.Zonetype }', ZoneStatus = { (zone.ZoneStatus ? 1 : 0) } WHERE ID = { id }";
+
+                SqlCommand command = new SqlCommand(commandText, conn);
+
+                conn.Open();
+
+                command.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+        [HttpGet("{ID}")]
+        public IActionResult GetZone(int ID)
+        {
+            Zones zone = new Zones();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                
+
+                string commandText = "SELECT * FROM indecision_candles WHERE ID = @id";
+                conn.Open();
+                SqlCommand command = new SqlCommand(commandText, conn);
+                command.Parameters.Add("@id", SqlDbType.Int);
+                command.Parameters["@id"].Value = ID;
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Check if the DataReader has any row.
+                if (reader.HasRows)
+                {
+                    // Obtain a row from the query result.
+                    while (reader.Read())
+                    {
+                        zone = new Zones
+                        {
+                            ID = reader.GetInt32(0),
+                            TimeS = reader.GetDateTime(1),
+                            Zonetype = reader.GetString(2),
+                            ZoneStatus = reader.GetBoolean(3)
+                        };
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+                // Always call the Close method when you have finished using the DataReader object.
+                reader.Close();
+
+            }
+
+            return Ok(zone);
         }
 
     }

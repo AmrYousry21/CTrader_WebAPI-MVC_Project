@@ -1,0 +1,35 @@
+﻿<div class="text-center">
+    <h1 class="display-4">CTrader API</h1>
+</div>
+
+@model Zones
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div><b>List of Zones</b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>ID</th>
+        <th> Time Stamp </th>
+        <th>Zone Type </th>
+        <th>Zone Status </th>
+    </tr>
+
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.TimeS</td>
+        <td>@Model.ZoneType</td>
+        <td>@Model.ZoneStatus</td>
+    </tr>
+
+</table>
+
+
+<div style="display: block">
+    <a href="/Views/Shared/Update/@Model.ID">Update this Zone</a>
+</div>
+

@@ -1,6 +1,6 @@
 ﻿namespace Web_API_Demo.Models
 {
-    public class ZonesViewModel
+    public class Zones
     {
         public int ID { get; set; } 
         public DateTime? TimeS { get; set; }

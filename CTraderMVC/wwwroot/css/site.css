@@ -16,3 +16,19 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.login-form {
+    background: #f1f1f1;
+    border-radius: 10px;
+    width: 520px;
+    padding: 20px;
+    margin-top: 30%;
+    margin-left: 30%;
+}
+
+#Action-button{
+    display: inline;
+    width: 50%;
+    color: white;
+    border-radius:inherit;
+}

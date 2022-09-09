@@ -15,29 +15,34 @@
 
 @if (Model is not null)
 {
-    <div><b>List of Zones</b><br /></div>
-    <table class="table table-bordered table-responsive table-hover">
-        <tr>
-            <th>ID</th>
-            <th> Time Stamp </th>
-            <th>Zone Type </th>
-            <th>Zone Status </th>
-            <th>Actions</th>
-        </tr>
-        @foreach (var d in Model)
-        {
-        <tr>
-            <td>@d.ID</td>
-            <td>@d.TimeS</td>
-            <td>@d.ZoneType</td>
-            <td>@d.ZoneStatus</td>
-            <td>
-                <a class="nav-link text-white" id="Action-button" style="background-color:red" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a>
-                    <a class="nav-link text-white" id="Action-button" style="background-color:green" asp-area="" asp-controller="ZonesOrders" asp-action="Update" asp-route-id="@d.ID">Edit</a>
-            </td>
-        </tr>
-        }
-    </table>
+    <div class="zones-wrapper col-lg-6 offset-lg-3">
+        <a class="btn btn-success" asp-area="" asp-controller="ZonesOrders" asp-action="CreateZone">Create New Zone</a>
+        <table class="table table-light table-hover zones-table">
+            <tr>
+                <th>ID</th>
+                <th> Time Stamp </th>
+                <th>Zone Type </th>
+                <th>Zone Status </th>
+                <th style="width:20%">Actions</th>
+            </tr>
+            @foreach (var d in Model)
+            {
+                <tr>
+                    <td>@d.ID</td>
+                    <td>@d.TimeS</td>
+                    <td>@d.ZoneType</td>
+                    <td>@d.ZoneStatus</td>
+                    <td>
+                        <div class="row">
+                            <a class="btn btn-danger col-lg-6" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a>
+                            <a class="btn btn-primary col-lg-6" asp-area="" asp-controller="ZonesOrders" asp-action="Update" asp-route-id="@d.ID">Edit</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
 }
 
 

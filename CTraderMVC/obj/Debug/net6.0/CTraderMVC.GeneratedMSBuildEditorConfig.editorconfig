@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\amryo\Repos\CTrader_WebAPI_Project\CTraderMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/CreateZone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENyZWF0ZVpvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

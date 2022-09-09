@@ -56,46 +56,18 @@ namespace CTraderWebAPI.Controllers
             return Ok(zones);
         }
 
-        //[HttpGet("{id}")]
-        //public string GetZoneStatus(int id)
-        //{
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
-
-        //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM indecision_candles WHERE ZoneStatus = " + id, connectionString);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            return JsonConvert.SerializeObject(dt);
-        //            conn.Close();
-        //        }
-
-        //        else
-        //        {
-        //            return "No data found";
-        //            conn.Close();
-        //        }
-
-        //    }
-        //}
-
         [HttpPut]
-        public void AddNewZone()
+        public void AddNewZone([FromBody] Zones zone)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand()
-                {
-                    CommandText = "AddNewZone",
-                    Connection = conn,
-                    CommandType = CommandType.StoredProcedure
-                };
+                string commandText = $"INSERT INTO indecision_candles (TimeS, ZoneType, ZoneStatus) VALUES ('{DateTime.Now}', '{zone.Zonetype}', {(zone.ZoneStatus ? 1 : 0)})";
+                SqlCommand command = new SqlCommand(commandText, conn);
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+
+                command.ExecuteNonQuery();
+
                 conn.Close();
 
             }

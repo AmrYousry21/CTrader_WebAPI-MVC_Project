@@ -20,15 +20,22 @@ body {
 .login-form {
     background: #f1f1f1;
     border-radius: 10px;
-    width: 520px;
     padding: 20px;
-    margin-top: 30%;
-    margin-left: 30%;
+    margin-top: 20%;
 }
 
-#Action-button{
+.action-button{
     display: inline;
     width: 50%;
     color: white;
     border-radius:inherit;
+}
+
+.zones-table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.zones-wrapper {
+    text-align:left;
 }

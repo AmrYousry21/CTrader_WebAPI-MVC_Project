@@ -104,5 +104,22 @@ namespace CTraderMVC.Controllers
 
             return RedirectToAction("Zones");
         }
+
+        public ActionResult CreateZone() 
+        {
+            return View();
+        }
+
+        public ActionResult InsertNewZone(Zones model) 
+        {
+            if (model is not null)
+            {
+                var request = new RestRequest("https://localhost:7064/api/Zones/", Method.Put).AddBody(model);
+
+                _client.Execute(request);
+            }
+            
+            return RedirectToAction("Zones");
+        }
     }
 }

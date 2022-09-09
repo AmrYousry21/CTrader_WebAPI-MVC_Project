@@ -1,11 +1,9 @@
 ﻿@model Zones
 
-<h2>Update Zone # @Model.ID</h2>
+<h2>Create Zone</h2>
 
-@using (Html.BeginForm("SaveZoneChanges", "ZonesOrders", FormMethod.Post, new { @class = "col-lg-4" }))
+@using (Html.BeginForm("InsertNewZone", "ZonesOrders", FormMethod.Post, new { @class = "col-lg-4" }))
 {
-    <input asp-for="ID" type="hidden" value="@Model.ID" />
-
     <label asp-for="ZoneType" class="control-label">Zone Type</label>
 
     @Html.DropDownListFor(m => m.ZoneType, new List<SelectListItem>{new SelectListItem() { Text = "Demand", Value = "Demand" }, new SelectListItem() { Text = "Supply", Value = "Supply" }}, "Select Zone Type", new { @class = "form-select"})
@@ -15,8 +13,8 @@
     <label asp-for="ZoneStatus" class="control-label">Status</label>
     @Html.CheckBoxFor(m => m.ZoneStatus, new { @checked = "checked" })
 
-    <br /> 
+    <br />
 
-    <input type="submit" value="Update Zone" class="btn btn-primary" />
+    <input type="submit" value="Create" class="btn btn-primary" />
 
 }

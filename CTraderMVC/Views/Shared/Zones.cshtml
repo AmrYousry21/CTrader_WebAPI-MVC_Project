@@ -43,6 +43,43 @@
         </table>
     </div>
 
+    <br /><br />
+
+    <div class="zones-wrapper col-lg-6 offset-lg-3">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-user"></i></p>
+                    <h3>@Model.Where(x => x.ZoneType == "Demand").Count()</h3>
+                    <p>Demand Zones</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-check"></i></p>
+                    <h3>@Model.Where(x => x.ZoneType == "Supply").Count()</h3>
+                    <p>Supply Zones</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-smile-o"></i></p>
+                    <h3>@Model.Where(x => x.ZoneStatus == true).Count()</h3>
+                    <p>Active Zones</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-coffee"></i></p>
+                    <h3>@Model.Where(x => x.ZoneStatus == false).Count()</h3>
+                    <p>Inactive Zones</p>
+                </div>
+            </div>
+        </div>
+    </div>
 }
 
 

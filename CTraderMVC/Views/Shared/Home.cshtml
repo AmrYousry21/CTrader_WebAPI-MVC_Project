@@ -1,33 +1,94 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home";
 }
 
+@model User;
 
 @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "col-lg-4 offset-lg-4 login-form" }))
 {
-    <table style="width:50%;margin-left:auto;margin-right:auto;">
-        <tr>
-            <td>
-                UserName:
-            </td>
-            <td>
-                @Html.TextBox("UserNameInput")
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Password
-            </td>
-            <td>
-                @Html.Password("UserPasswordInput")
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="login" name="login" />
-            </td>
-        </tr>
-    </table>
-   
+    <div class="zones-wrapper login-form col-lg-4 offset-lg-4">
+        <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <table>
+                    <h3 style="text-align:center">Please Login:</h3>
+                    <br />
+                    <tr>
+                        <td>
+                            UserName:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            @Html.PasswordFor(m => m.Password)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a member? <a href="#!">Register</a></p>
+            </div>
+        </form>
+    </div>
 }
+
+@*<div class="zones-wrapper login-form col-lg-4 offset-lg-4">
+    <form>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" />
+            <label class="form-label" for="@Model.UserName">User Name</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" />
+            <label class="form-label" for="@Model.Password">Password</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+        </div>
+    </form>
+</div>
+*@
+
+@*<table style="width:50%;margin-left:auto;margin-right:auto;">
+    <thead>Please Login:</thead>
+    <tr>
+        <td>
+            UserName:
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.UserName)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td>
+            @Html.PasswordFor(m => m.Password)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="login" name="login" />
+        </td>
+    </tr>
+</table>*@

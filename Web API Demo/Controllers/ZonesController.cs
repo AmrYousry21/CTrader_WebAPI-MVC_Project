@@ -5,18 +5,19 @@ using System.Data;
 using Newtonsoft.Json;
 using Web_API_Demo.Models;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CTraderWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
+   
     public class ZonesController : ControllerBase
     {
 
         string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
-
         [HttpGet]
+        [Authorize]
         public IActionResult GetALLZones()
         {
             List<Zones> zones = new List<Zones>();

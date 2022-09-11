@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 
@@ -10,6 +11,7 @@ namespace Web_API_Demo.Controllers
     public class OrderController : Controller
     {
         [HttpGet]
+        [Authorize]
         public IActionResult GetALLZones()
         {
             string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";

@@ -35,6 +35,10 @@ body {
     margin: 0 auto;
 }
 
+.zones-table th, td {
+    text-align: center;
+}
+
 .zones-wrapper {
     text-align:left;
 }
@@ -81,4 +85,8 @@ body {
 
 .fa {
     font-size: 50px;
+}
+.pull-right {
+    position: absolute;
+    right: 9px;
 }

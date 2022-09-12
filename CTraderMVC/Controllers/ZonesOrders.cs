@@ -29,10 +29,18 @@ namespace CTraderMVC.Controllers
             List<Zones> zones = new List<Zones>();
 
             var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
-           
-            request.AddHeader("Authorization", $"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW1yeW91c3J5IiwibmJmIjoxNjYyODU3MzUwLCJleHAiOjE2NjI4NTc5NTAsImlhdCI6MTY2Mjg1NzM1MH0.65oo2iUaOJqLF9EiDx_U3x1eDbJiZbnWQwRQU1a5LKM");
+            var token = HttpContext.Session.GetString("Token");
+            var tokenWrapper = "Bearer " + token.Replace("\"", "");
+            request.AddHeader("Authorization", tokenWrapper);
             var result = _client.Execute(request);
-            zones = JsonConvert.DeserializeObject<List<Zones>>(result.Content);
+            if (result.StatusCode == HttpStatusCode.OK)
+            {
+                zones = JsonConvert.DeserializeObject<List<Zones>>(result.Content);
+            }
+            else if (result.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return View("User", "Home");
+            }
 
             return View(zones);
         }
@@ -42,10 +50,22 @@ namespace CTraderMVC.Controllers
             List<Order> orders = new List<Order>();
 
             var request = new RestRequest("https://localhost:7064/api/Order", Method.Get);
+
+            var token = HttpContext.Session.GetString("Token");
+            var tokenWrapper = "Bearer " + token.Replace("\"", "");
             
-            request.AddHeader($"Authorization", $"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW1yeW91c3J5IiwibmJmIjoxNjYyODU3MzUwLCJleHAiOjE2NjI4NTc5NTAsImlhdCI6MTY2Mjg1NzM1MH0.65oo2iUaOJqLF9EiDx_U3x1eDbJiZbnWQwRQU1a5LKM");
+            request.AddHeader("Authorization", tokenWrapper);
             var result = _client.Execute(request);
-            orders = JsonConvert.DeserializeObject<List<Order>>(result.Content);
+            
+            if (result.StatusCode == HttpStatusCode.OK)
+            {
+                orders = JsonConvert.DeserializeObject<List<Order>>(result.Content);
+            }
+            else if (result.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                return View("User", "Home");
+            }
+            
 
             return View(orders);
         }
@@ -60,6 +80,9 @@ namespace CTraderMVC.Controllers
         public ActionResult Delete(int id)
         {
             var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Delete);
+            var token = HttpContext.Session.GetString("Token");
+            var tokenWrapper = "Bearer " + token.Replace("\"", "");
+            request.AddHeader("Authorization", tokenWrapper);
             var result = _client.Execute(request);
 
             return RedirectToAction("Zones", Zones);
@@ -69,6 +92,9 @@ namespace CTraderMVC.Controllers
         {
             Zones zone = new Zones();
             var request = new RestRequest("https://localhost:7064/api/Zones/" + ID, Method.Get);
+            var token = HttpContext.Session.GetString("Token");
+            var tokenWrapper = "Bearer " + token.Replace("\"", "");
+            request.AddHeader("Authorization", tokenWrapper);
             var result = _client.Execute(request);
             zone = JsonConvert.DeserializeObject<Zones>(result.Content);
 
@@ -78,8 +104,10 @@ namespace CTraderMVC.Controllers
         {
             Zones zone = new Zones();
 
-            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Get);
-
+            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Put);
+            var token = HttpContext.Session.GetString("Token");
+            var tokenWrapper = "Bearer " + token.Replace("\"", "");
+            request.AddHeader("Authorization", tokenWrapper);
             var result = _client.Execute(request);
 
             return View("Update", zone);
@@ -90,9 +118,12 @@ namespace CTraderMVC.Controllers
         {
             if (model is not null)
             {
-                var request = new RestRequest("https://localhost:7064/api/Zones/" + model.ID, Method.Put).AddBody(model);
+                var request = new RestRequest("https://localhost:7064/api/Zones", Method.Post);
 
-                _client.Execute(request);
+                var token = HttpContext.Session.GetString("Token");
+                var tokenWrapper = "Bearer " + token.Replace("\"", "");
+                request.AddHeader("Authorization", tokenWrapper);
+                var result = _client.Execute(request);
             }
 
             return RedirectToAction("Zones");

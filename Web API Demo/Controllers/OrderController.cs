@@ -12,7 +12,7 @@ namespace Web_API_Demo.Controllers
     {
         [HttpGet]
         [Authorize]
-        public IActionResult GetALLZones()
+        public IActionResult GetALLOrders()
         {
             string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
 

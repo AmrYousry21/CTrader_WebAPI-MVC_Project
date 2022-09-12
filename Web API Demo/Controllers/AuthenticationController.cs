@@ -11,24 +11,25 @@ using Web_API_Demo.Models;
 
 namespace Web_API_Demo.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IConfiguration _config;
-        string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
+        private readonly IConfiguration Configuration;
 
-        public AuthenticationController(IConfiguration configuration)
+        public AuthenticationController(IConfiguration _configuration)
         {
-            _config = configuration;
+            Configuration = _configuration;
         }
-
+        
+      
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public ActionResult Login([FromBody] User user)
         {
-
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -61,7 +62,7 @@ namespace Web_API_Demo.Controllers
                 }
 
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var tokenKey = Encoding.UTF8.GetBytes(_config["JWT:Key"]);
+                var tokenKey = Encoding.UTF8.GetBytes(Configuration["JWT:Key"]);
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[]
@@ -81,6 +82,7 @@ namespace Web_API_Demo.Controllers
         [Route("register")]
         public void InsertNewUser([FromBody] User user)
         {
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();

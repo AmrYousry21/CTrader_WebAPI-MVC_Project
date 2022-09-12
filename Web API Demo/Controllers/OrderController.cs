@@ -10,11 +10,18 @@ namespace Web_API_Demo.Controllers
 
     public class OrderController : Controller
     {
+        private readonly IConfiguration Configuration;
+
+        public OrderController(IConfiguration _configuration)
+        {
+            Configuration = _configuration;
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult GetALLOrders()
         {
-            string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
 
             List<Models.Orders> orders = new List<Models.Orders>();
             using (SqlConnection conn = new SqlConnection(connectionString))

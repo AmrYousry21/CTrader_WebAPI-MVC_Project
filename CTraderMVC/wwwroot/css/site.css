@@ -23,6 +23,10 @@ body {
     margin-top: 5%;
 }
 
+.register-buttons{
+    display:inline-block;
+}
+
 .login_header{
     text-align:center;
 }

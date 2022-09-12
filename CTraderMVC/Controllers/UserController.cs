@@ -48,6 +48,10 @@ namespace CTraderMVC.Controllers
         // GET: Users
         public ActionResult Home()
         {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Token")))
+            {
+                return RedirectToAction("Zones", "ZonesOrders");
+            }
             return View();
         }
 

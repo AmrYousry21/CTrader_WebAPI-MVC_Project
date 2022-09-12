@@ -115,12 +115,19 @@ namespace CTraderMVC.Controllers
         {
             if (model is not null)
             {
-                var request = new RestRequest("https://localhost:7064/api/Zones", Method.Post);
+                // Initialize PUT Request
+                var request = new RestRequest("https://localhost:7064/api/Zones/" + model.ID, Method.Put);
 
+                // Retrieve Token From Session
                 var token = HttpContext.Session.GetString("Token");
                 var tokenWrapper = "Bearer " + token.Replace("\"", "");
+
+                // Attach Token and Body
                 request.AddHeader("Authorization", tokenWrapper);
-                var result = _client.Execute(request);
+                request.AddBody(model);
+
+                // Execute Request
+                _client.Execute(request);
             }
 
             return RedirectToAction("Zones");
@@ -135,7 +142,7 @@ namespace CTraderMVC.Controllers
         {
             if (model is not null)
             {
-                var request = new RestRequest("https://localhost:7064/api/Zones/", Method.Put).AddBody(model);
+                var request = new RestRequest("https://localhost:7064/api/Zones/", Method.Post).AddBody(model);
 
                 _client.Execute(request);
             }

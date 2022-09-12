@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Web_API_Demo.Models;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 
 namespace CTraderWebAPI.Controllers
 {
@@ -15,11 +16,20 @@ namespace CTraderWebAPI.Controllers
     public class ZonesController : ControllerBase
     {
 
-        string connectionString = "Server=DESKTOP-2HTGD7R;Database=CTrader;Trusted_Connection=True";
+        private readonly IConfiguration Configuration;
+
+        public ZonesController(IConfiguration _configuration)
+        {
+            Configuration = _configuration;
+        }
+        
+
+
         [HttpGet]
         [Authorize]
         public IActionResult GetALLZones()
         {
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
             List<Zones> zones = new List<Zones>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -57,9 +67,10 @@ namespace CTraderWebAPI.Controllers
             return Ok(zones);
         }
 
-        [HttpPut]
+        [HttpPost]
         public void AddNewZone([FromBody] Zones zone)
         {
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string commandText = $"INSERT INTO indecision_candles (TimeS, ZoneType, ZoneStatus) VALUES ('{DateTime.Now}', '{zone.Zonetype}', {(zone.ZoneStatus ? 1 : 0)})";
@@ -78,8 +89,9 @@ namespace CTraderWebAPI.Controllers
 
         public void Delete(int id)
         {
-            
 
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
+            
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
@@ -104,6 +116,8 @@ namespace CTraderWebAPI.Controllers
 
         public void Update(int id, [FromBody] Zones zone)
         {
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string commandText = $"UPDATE indecision_candles SET Zonetype = '{ zone.Zonetype }', ZoneStatus = { (zone.ZoneStatus ? 1 : 0) } WHERE ID = { id }";
@@ -121,6 +135,8 @@ namespace CTraderWebAPI.Controllers
         public IActionResult GetZone(int ID)
         {
             Zones zone = new Zones();
+            string connectionString = this.Configuration.GetConnectionString("MyConn");
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Linq;
@@ -22,7 +23,9 @@ namespace Web_API_Demo.Controllers
             _config = configuration;
         }
 
+        [AllowAnonymous]
         [HttpPost]
+        [Route("login")]
         public ActionResult Login([FromBody] User user)
         {
 
@@ -71,6 +74,20 @@ namespace Web_API_Demo.Controllers
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 return Ok(tokenHandler.WriteToken(token));
             }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("register")]
+        public void InsertNewUser([FromBody] User user)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand($"INSERT INTO Users (UserName, Password) VALUES ('{user.UserName}','{user.Password}')", conn);
+                command.ExecuteNonQuery();
+            }
+               
         }
     }
 }

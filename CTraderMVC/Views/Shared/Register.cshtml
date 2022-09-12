@@ -1,13 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Register";
 }
 
 @model User;
 
-@using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "col-lg-4 offset-lg-4 login-form" }))
+@using (Html.BeginForm("InsertNewUser", "User", FormMethod.Post, new { @class = "col-lg-4 offset-lg-4 login-form" }))
 {
     <div class="zones-wrapper login-form col-lg-8 offset-lg-4">
-        <h3 class="login_header">Please Log in:</h3>
+        <h3 class="login_header">Register:</h3>
         <form>
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -33,12 +33,7 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-            <!-- Register buttons -->
-            <div class="text-center">
-                <p>Not a Member yet?</p><a class="nav-link text-blue" asp-area="" asp-controller="User" asp-action="Register">Register</a>
-            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
         </form>
     </div>
 }

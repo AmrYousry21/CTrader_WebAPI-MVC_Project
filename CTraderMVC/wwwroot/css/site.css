@@ -23,11 +23,15 @@ body {
     margin-top: 5%;
 }
 
-.action-button{
+.login_header{
+    text-align:center;
+}
+
+.action-button {
     display: inline;
     width: 50%;
     color: white;
-    border-radius:inherit;
+    border-radius: inherit;
 }
 
 .zones-table {

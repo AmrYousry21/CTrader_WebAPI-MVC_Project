@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FSS6Og3lUP8L4o7IQ0Y0JKERFbnSwKTOr6IBsxDUVyZCeftmIJe2IslHyUXx++pWHKtQJmTua7Z0isq24gBpWA==",
+  "dgSpecHash": "vPpeblC3c7UupWH/VOHekrUfCRycSQ0ZUr1RXe3RxSeZPz8LMTcVdT5BKcybnVoLBKsLi2QZe9LUkX9MIfmeyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\CTraderMVC\\CTraderMVC.csproj",
+  "projectFilePath": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\CTraderMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amryo\\.nuget\\packages\\google.apis\\1.57.0\\google.apis.1.57.0.nupkg.sha512",
     "C:\\Users\\amryo\\.nuget\\packages\\google.apis.admin.directory.directory_v1\\1.57.0.2791\\google.apis.admin.directory.directory_v1.1.57.0.2791.nupkg.sha512",

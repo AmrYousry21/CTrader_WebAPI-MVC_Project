@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj": {}
+    "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\CTraderWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj": {
+    "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\CTraderWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\CTraderWebAPI.csproj",
         "projectName": "CTraderWebAPI",
-        "projectPath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj",
+        "projectPath": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\CTraderWebAPI.csproj",
         "packagesPath": "C:\\Users\\amryo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\obj\\",
+        "outputPath": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amryo\\AppData\\Roaming\\NuGet\\NuGet.Config",

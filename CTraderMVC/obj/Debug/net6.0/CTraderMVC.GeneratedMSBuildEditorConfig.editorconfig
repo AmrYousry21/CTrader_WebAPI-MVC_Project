@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CTraderMVC
 build_property.RootNamespace = CTraderMVC
-build_property.ProjectDir = C:\Users\amryo\Repos\CTrader_WebAPI_Project\CTraderMVC\
+build_property.ProjectDir = C:\Users\amryo\Repos\CTraderProject\CTrader_WebAPI-MVC_Project\CTraderMVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\amryo\Repos\CTrader_WebAPI_Project\CTraderMVC
+build_property.MSBuildProjectDirectory = C:\Users\amryo\Repos\CTraderProject\CTrader_WebAPI-MVC_Project\CTraderMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/CreateZone.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/CreateZone.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENyZWF0ZVpvbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Error.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Home.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Orders.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Orders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Register.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Update.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/ViewZone.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/ViewZone.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFZpZXdab25lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/Zones.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/Zones.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFpvbmVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/_ViewImports.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/_ViewStart.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/amryo/Repos/CTrader_WebAPI_Project/CTraderMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/amryo/Repos/CTraderProject/CTrader_WebAPI-MVC_Project/CTraderMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bp13359al8

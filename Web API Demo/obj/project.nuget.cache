@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1yCapKPDf83vt2hDWkApHsERLDgx1sYMDz1Cwwwq6Emy4D7p6cy3U0MymiimOg72QkyOu9Vd03MlXBpe4DzOyw==",
+  "dgSpecHash": "gpQMSMPZqyVii/SJdu5PMO6VA0vkvn36bQMa6nR6XI+MmWWktq57INcafp1CTkNMqJ9XgBv5AoisNRxyUzzY/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amryo\\Repos\\CTrader_WebAPI_Project\\Web API Demo\\CTraderWebAPI.csproj",
+  "projectFilePath": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\Web API Demo\\CTraderWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amryo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.8\\microsoft.aspnetcore.authentication.jwtbearer.6.0.8.nupkg.sha512",
     "C:\\Users\\amryo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "apis2": {
+      "apiEndpoint": "https://ctraderapi.azure-api.net/ctrader",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/CTraderAPI/apis/CTraderWebAPI",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/ctradermvcdbserver/databases/CTrader",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:MyConn",
+      "dynamicId": null
+    }
+  }
+}

@@ -16,7 +16,7 @@
 @if (Model is not null)
 {
     <div class="zones-wrapper col-lg-6 offset-lg-3">
-        <a class="btn btn-success" asp-area="" asp-controller="ZonesOrders" asp-action="CreateZone">Create New Zone</a>
+        <a class="btn btn-success" asp-area="" asp-controller="Zone" asp-action="CreateZone">Create New Zone</a>
         <table class="table table-light table-hover zones-table">
             <tr>
                 <th>ID</th>
@@ -34,8 +34,8 @@
                     <td>@d.ZoneStatus</td>
                     <td>
                         <div class="row">
-                            <a class="btn btn-danger col-lg-6" asp-area="" asp-controller="ZonesOrders" asp-action="Delete" asp-route-id="@d.ID">Delete</a>
-                            <a class="btn btn-primary col-lg-6" asp-area="" asp-controller="ZonesOrders" asp-action="Update" asp-route-id="@d.ID">Edit</a>
+                            <a class="btn btn-danger col-lg-6" asp-area="" asp-controller="Zone" asp-action="Delete" asp-route-id="@d.ID">Delete</a>
+                            <a class="btn btn-primary col-lg-6" asp-area="" asp-controller="Zone" asp-action="Update" asp-route-id="@d.ID">Edit</a>
                         </div>
                     </td>
                 </tr>

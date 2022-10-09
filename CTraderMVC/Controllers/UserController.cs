@@ -24,7 +24,7 @@ namespace CTraderMVC.Controllers
         }
         public ActionResult Login(User user)
         {
-            var request = new RestRequest("https://localhost:7064/api/Authentication/login", Method.Post);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Authentication/login", Method.Post);
             request.AddBody(user);
             var result = _client.Execute(request);
 
@@ -57,11 +57,11 @@ namespace CTraderMVC.Controllers
 
         public ActionResult InsertNewUser(User user)
         {
-            var request = new RestRequest("https://localhost:7064/api/Authentication/register", Method.Post);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Authentication/register", Method.Post);
             request.AddBody(user);
             var result = _client.Execute(request);
 
-            return RedirectToAction("Home");
+            return RedirectToAction("LoginPage");
         }
     }
 }

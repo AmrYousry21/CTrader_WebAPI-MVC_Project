@@ -2,7 +2,7 @@
 
 <h2>Update Zone # @Model.ID</h2>
 
-@using (Html.BeginForm("SaveZoneChanges", "ZonesOrders", FormMethod.Post, new { @class = "col-lg-4" }))
+@using (Html.BeginForm("SaveZoneChanges", "Zone", FormMethod.Post, new { @class = "col-lg-4" }))
 {
     <input asp-for="ID" type="hidden" value="@Model.ID" />
 

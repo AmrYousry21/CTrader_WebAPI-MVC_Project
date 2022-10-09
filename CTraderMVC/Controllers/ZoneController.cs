@@ -28,7 +28,7 @@ namespace CTraderMVC.Controllers
         {
             List<Zones> zones = new List<Zones>();
 
-            var request = new RestRequest("https://localhost:7064/api/Zones", Method.Get);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones", Method.Get);
             var token = HttpContext.Session.GetString("Token") ?? "";
             var tokenWrapper = "Bearer " + token.Replace("\"", "");
             request.AddHeader("Authorization", tokenWrapper);
@@ -49,7 +49,7 @@ namespace CTraderMVC.Controllers
         {
             List<Order> orders = new List<Order>();
 
-            var request = new RestRequest("https://localhost:7064/api/Order", Method.Get);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Order", Method.Get);
             var token = HttpContext.Session.GetString("Token") ?? "";
             var tokenWrapper = "Bearer " + token.Replace("\"", "");
             request.AddHeader("Authorization", tokenWrapper);
@@ -77,7 +77,7 @@ namespace CTraderMVC.Controllers
 
         public ActionResult Delete(int id)
         {
-            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Delete);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones/" + id, Method.Delete);
             var token = HttpContext.Session.GetString("Token");
             var tokenWrapper = "Bearer " + token.Replace("\"", "");
             request.AddHeader("Authorization", tokenWrapper);
@@ -89,7 +89,7 @@ namespace CTraderMVC.Controllers
         public ActionResult ViewZone(int ID)
         {
             Zones zone = new Zones();
-            var request = new RestRequest("https://localhost:7064/api/Zones/" + ID, Method.Get);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones/" + ID, Method.Get);
             var token = HttpContext.Session.GetString("Token");
             var tokenWrapper = "Bearer " + token.Replace("\"", "");
             request.AddHeader("Authorization", tokenWrapper);
@@ -100,7 +100,7 @@ namespace CTraderMVC.Controllers
         }
         public ActionResult Update(int id)
         {
-            var request = new RestRequest("https://localhost:7064/api/Zones/" + id, Method.Get);
+            var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones/" + id, Method.Get);
             var token = HttpContext.Session.GetString("Token");
             var tokenWrapper = "Bearer " + token.Replace("\"", "");
             request.AddHeader("Authorization", tokenWrapper);
@@ -116,7 +116,7 @@ namespace CTraderMVC.Controllers
             if (model is not null)
             {
                 // Initialize PUT Request
-                var request = new RestRequest("https://localhost:7064/api/Zones/" + model.ID, Method.Put);
+                var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones/" + model.ID, Method.Put);
 
                 // Retrieve Token From Session
                 var token = HttpContext.Session.GetString("Token");
@@ -142,7 +142,7 @@ namespace CTraderMVC.Controllers
         {
             if (model is not null)
             {
-                var request = new RestRequest("https://localhost:7064/api/Zones/", Method.Post).AddBody(model);
+                var request = new RestRequest("https://ctraderwebapi20221009122731.azurewebsites.net/api/Zones/", Method.Post).AddBody(model);
 
                 _client.Execute(request);
             }

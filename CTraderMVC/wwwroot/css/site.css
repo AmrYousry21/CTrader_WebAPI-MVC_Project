@@ -93,8 +93,8 @@ html {
     font-size: 50px;
 }
 .pull-right {
-    position: absolute;
-    right: 30px;
+    /*position: absolute;
+    right: 30px;*/
     
 }
 .login-form-table{
@@ -126,9 +126,14 @@ html {
     height: 30%;
     width: 100%;
 }
-.top-image{
-   padding-left:20px;
+.top-image {
+    padding-left: 20px;
+    max-width: 100%;
+    width: auto;
 }
 .bottom-image {
     padding-right: 20px;
+}
+.navbar-toggler-icon{
+    background-color:azure;
 }

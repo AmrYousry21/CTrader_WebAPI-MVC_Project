@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apis2": {
+      "apiEndpoint": "https://ctraderwebapi.azure-api.net/Ctrader",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/CTraderWebAPI/apis/CTraderWebAPI",
+      "type": "apis.azure"
+    }
+  }
+}

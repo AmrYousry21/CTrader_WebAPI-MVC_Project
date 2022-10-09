@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CTraderMVC.Models
 {
-    public class User
+    public class User : IUser
     {
         public int PersonId { get; set; }
         [Display(Name= "User Name")]

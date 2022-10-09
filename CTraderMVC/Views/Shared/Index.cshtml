@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif
+    }
+
+    .w3-bar, h1, button {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor, .fa-coffee {
+        font-size: 200px
+    }
+</style>
+</head>
+<body>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>About This Project</h1>
+                <h5 class="w3-padding-32">.NET API and MVC project created to support CRUD operations for a Trading bot. Key Features: JWT authentication, CRUD operations performed by MVC through action buttons and a Register user page that adds a new user to the Database.</h5>
+
+                <p class="w3-text-grey">
+                   The Main purpose of this project was to resolve the issue of data loss post crash of the CTrader platform. The trading bot uses "Zones" which are areas drawn on the market to be used for trade singals. As these zones are drawn the process of finding a valid zone could take days. When the platfrom crashes and that zone is deleted it meas that it costs us days of trading. This project solved that issue by stroing these zones on a database to be able to reuse them and draw them again post crash.
+                </p>
+            </div>
+
+            <div class="w3-third w3-center">
+                <p><strong>Trading Bot in Action</strong></p>
+                <img src="images/TradingBotGif.gif" class="top-image" alt="Forex Trading" height="400" width="600" >
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <img src="images/ForexTrading.jpg" class="bottom-image" alt="Forex Trading" height="300" width="300">
+            </div>
+
+            <div class="w3-twothird">
+                <h1>Future Plans</h1>
+                <h5 class="w3-padding-32">We plan to create a subcription based service where users can get access to the Trading bot and this platform to manage and optimize performance.</h5>
+                <p class="w3-text-grey">
+                   We Plan to allow the trading bot to be publicaly avaliable when ready. At the moment over the last two years on five different pairs total the bot showed a 20% profit. However there's still a lot of improvements and modifications that need to be done. Once we are confident in it's performance. Users will be able to create and account on this Web application to track their trading bot instance and have a data backup incase of crashes or bot stops.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">Fortech Trading: Supply and Demand Trading Bot</h1>
+    </div>
+    </body>

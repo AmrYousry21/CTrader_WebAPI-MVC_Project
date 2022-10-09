@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UniHdsAwIvkjbYHgWivsVScl9DVZYplBm/V0PfFUkPw=",
+  "Hash": "9UCbvWcl4qhc0Ww+d26/G3S/gZeFntwIVLLwysL/viA=",
   "Source": "CTraderMVC",
   "BasePath": "_content/CTraderMVC",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\wwwroot\\images\\ForexTrading.jpg",
+      "SourceId": "CTraderMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\wwwroot\\",
+      "BasePath": "_content/CTraderMVC",
+      "RelativePath": "images/ForexTrading.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ForexTrading.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\wwwroot\\images\\TradingBotGif.gif",
+      "SourceId": "CTraderMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\wwwroot\\",
+      "BasePath": "_content/CTraderMVC",
+      "RelativePath": "images/TradingBotGif.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\TradingBotGif.gif"
     },
     {
       "Identity": "C:\\Users\\amryo\\Repos\\CTraderProject\\CTrader_WebAPI-MVC_Project\\CTraderMVC\\wwwroot\\js\\site.js",

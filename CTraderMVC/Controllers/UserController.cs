@@ -18,7 +18,10 @@ namespace CTraderMVC.Controllers
             _client = new RestClient();
         }
 
-
+        public ActionResult LoginPage() 
+        {
+            return View();
+        }
         public ActionResult Login(User user)
         {
             var request = new RestRequest("https://localhost:7064/api/Authentication/login", Method.Post);
@@ -29,12 +32,12 @@ namespace CTraderMVC.Controllers
             if (result.StatusCode == HttpStatusCode.OK)
             {
                 HttpContext.Session.SetString("Token", result.Content);
-                return RedirectToAction("Zones", "ZonesOrders");
+                return RedirectToAction("Zones", "Zone");
             }
 
             else
             {
-                return RedirectToAction("Home", "User");
+                return RedirectToAction("Index", "Home");
             }
         }
 
@@ -42,18 +45,10 @@ namespace CTraderMVC.Controllers
         {
             HttpContext.Session.SetString("Token", "");
 
-            return RedirectToAction("Home", "User");
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Users
-        public ActionResult Home()
-        {
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Token")))
-            {
-                return RedirectToAction("Zones", "ZonesOrders");
-            }
-            return View();
-        }
 
         public ActionResult Register()
         {

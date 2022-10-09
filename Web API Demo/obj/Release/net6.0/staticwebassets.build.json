@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "X02N+NVxpEHCwDgq2OdTgKjnHfpY8AOUGbblU2fnq9k=",
-  "Source": "Web API Demo",
-  "BasePath": "_content/Web API Demo",
+  "Hash": "ak8DKuqZLDQNPw0sE9HAXEt2erEvW5eFfD0Zv9MWs0M=",
+  "Source": "CTraderWebAPI",
+  "BasePath": "_content/CTraderWebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

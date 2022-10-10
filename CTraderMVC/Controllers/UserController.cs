@@ -45,7 +45,7 @@ namespace CTraderMVC.Controllers
         {
             HttpContext.Session.SetString("Token", "");
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("LoginPage", "User");
         }
 
         // GET: Users

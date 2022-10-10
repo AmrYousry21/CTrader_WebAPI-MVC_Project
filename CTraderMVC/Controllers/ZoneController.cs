@@ -39,7 +39,7 @@ namespace CTraderMVC.Controllers
             }
             else if (result.StatusCode == HttpStatusCode.Unauthorized)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("LoginPage", "User");
             }
 
             return View(zones);
@@ -61,7 +61,7 @@ namespace CTraderMVC.Controllers
             }
             else if (result.StatusCode == HttpStatusCode.Unauthorized)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("LoginPage", "User");
             }
 
 
